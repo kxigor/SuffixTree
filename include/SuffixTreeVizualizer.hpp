@@ -4,6 +4,7 @@
 
 #include "SuffixTree.hpp"
 
+namespace suffix_tree {
 template <typename SuffixTreeType>
 class SuffixTreeVisualizer {
   using SuffixTreeT = SuffixTreeType;
@@ -58,3 +59,4 @@ class SuffixTreeVisualizer {
 
   const SuffixTreeT& tree_;
 };
+}  // namespace suffix_tree

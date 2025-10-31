@@ -2,7 +2,8 @@
 
 build() {
     cmake . -B build
-    make -C build -s
+    cmake --build build --parallel 4
+    # make -C build -s
 }
 
 clean_build() {

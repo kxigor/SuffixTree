@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CLANG_FORMAT="clang-format-19"
+CLANG_FORMAT_CONFIG=tests/StaticAnalysis/.clang-format
+CLANG_FORMAT="clang-format --style=file:$CLANG_FORMAT_CONFIG"
 exit_status=0
 
 for file in "$@"; do

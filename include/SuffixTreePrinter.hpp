@@ -8,6 +8,7 @@
 
 #include "SuffixTree.hpp"
 
+namespace suffix_tree {
 template <typename SuffixTreeType>
 class SuffixTreePrinter {
   using SuffixTreeT = SuffixTreeType;
@@ -66,3 +67,4 @@ class SuffixTreePrinter {
   std::vector<NodeT*> ordered_nodes_;
   std::unordered_map<NodeT*, size_t> node_id_;
 };
+}  // namespace suffix_tree

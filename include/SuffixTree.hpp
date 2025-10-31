@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <vector>
 
+namespace suffix_tree {
 template <typename StringType = std::string>
 requires requires(StringType& str, const StringType& cstr, std::size_t pos) {
   typename StringType::value_type;
@@ -193,6 +194,7 @@ class SuffixTree {
   /*========================== Constructors ===========================*/
  public:
   SuffixTree() = delete;
+
   explicit SuffixTree(StringT input_str)
       : root_(Node::GetNew(nullptr, 0, 0)),
         input_str_(std::move(input_str)),
@@ -203,6 +205,7 @@ class SuffixTree {
       ProcessSymbol();
     }
   }
+
   ~SuffixTree() {
     std::vector<Node*> stack;
     stack.push_back(root_);
@@ -278,3 +281,4 @@ class SuffixTree {
   bool is_need_to_continue_processing_{};
   Node* node_to_attach_{};
 };
+}  // namespace suffix_tree

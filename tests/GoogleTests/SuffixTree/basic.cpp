@@ -2,19 +2,19 @@
 
 #include <sstream>
 
-#include "SuffixTree.hpp"
-#include "SuffixTreePrinter.hpp"
-#include "SuffixTreeVeriefer.hpp"
+#include "include/SuffixTree.hpp"
+#include "include/SuffixTreePrinter.hpp"
+#include "include/SuffixTreeVeriefer.hpp"
 
 std::string TestTree(const std::string& s, const std::string& t);
 
 std::string TestTree(const std::string& s, const std::string& t) {
-  SuffixTree tree(s + t);
-  SuffixTreeVerifier verifier(tree);
+  suffix_tree::SuffixTree tree(s + t);
+  suffix_tree::SuffixTreeVerifier verifier(tree);
   if (not verifier.Verify()) {
     return "";
   }
-  SuffixTreePrinter printer(tree, s, t);
+  suffix_tree::SuffixTreePrinter printer(tree, s, t);
   std::stringstream outbuffer;
   printer.Print(outbuffer);
   return outbuffer.str();

@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 
-#include <TestGenerator.hpp>
 #include <cstddef>
 
-#include "SuffixTree.hpp"
-#include "SuffixTreeVeriefer.hpp"
+#include "../Helpers/TestGenerator.hpp"
+#include "include/SuffixTree.hpp"
+#include "include/SuffixTreeVeriefer.hpp"
 
 static constexpr const std::size_t kLeftTestingLength = 1;
 static constexpr const std::size_t kRightTestingLength = 200;
@@ -26,8 +26,8 @@ TEST_P(VariableLengthTest, Basic) {
   StringRandomGenerator gen(coef_);
   const auto kFirst = gen.GenerateString(length_);
   const auto kSecond = gen.GenerateString(length_);
-  SuffixTree tree(kFirst + kSecond);
-  SuffixTreeVerifier verifier(tree);
+  suffix_tree::SuffixTree tree(kFirst + kSecond);
+  suffix_tree::SuffixTreeVerifier verifier(tree);
   ASSERT_TRUE(verifier.Verify());
 }
 

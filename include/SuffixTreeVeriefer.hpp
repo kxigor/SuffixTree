@@ -5,6 +5,7 @@
 
 #include "SuffixTree.hpp"
 
+namespace suffix_tree {
 template <typename SuffixTreeType>
 class SuffixTreeVerifier {
   using SuffixTreeT = SuffixTreeType;
@@ -56,3 +57,4 @@ class SuffixTreeVerifier {
 
   const SuffixTreeT& tree_;
 };
+}  // namespace suffix_tree
